@@ -11,19 +11,12 @@ BlogPost.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    author: {
-      type: DataTypes.STRING,
-      defaultValue: "Anonymous",
-    },
     title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     content: {
       type: DataTypes.STRING,
-    },
-    date_created: {
-      type: DataTypes.DATE,
     },
   },
   {
