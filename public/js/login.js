@@ -2,8 +2,6 @@ const loginFormHandler = async (event) => {
   //
   event.preventDefault();
 
-  // const usernameEl = $("#username-login");  jquery???
-
   const username = document.querySelector("#username-login").value.trim();
   const password = document.querySelector("#password-login").value.trim();
 
@@ -15,7 +13,7 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace();
+      document.location.replace("/profile");
     } else {
       alert(response.statusText);
     }
@@ -27,6 +25,10 @@ const signupFormHandler = async (event) => {
 
   const username = document.querySelector("#username-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
+
+  console.log("In the signup handler!!");
+  console.log(username);
+  console.log(password);
 
   if (username && password) {
     const response = await fetch("/api/users", {
