@@ -17,3 +17,20 @@
 .blog-post {
   border: 2px solid black;
 }
+
+#post-content {
+  width: 600px;
+  height: 200px;
+}
+
+.created-by {
+  font-size: 15px;
+}
+
+.edit-btn {
+  display: inline-block;
+}
+
+/* .comment-btn {
+  display: inline;
+} */

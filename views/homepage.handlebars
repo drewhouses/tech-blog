@@ -1,12 +1,16 @@
 <p>This is my homepage!</p>
 
 {{#each posts as |post|}}
-<div class="blog-post">
-  <h2>
+<div class="blog-post" id="post-{{post.id}}">
+  <h2 class="blog-post-title">
     {{post.title}}
   </h2>
   <p>
-    <span class="blog-post-title">{{post.content}}</span>
+    <span class="blog-post-content">{{post.content}}</span>
   </p>
 </div>
+    <div>
+    <p class="created-by">Created by {{user.username}} on {{post.createdAt}}</p>
+    </div>
+</br>
 {{/each}}

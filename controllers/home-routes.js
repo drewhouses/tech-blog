@@ -30,11 +30,21 @@ router.get("/profile", withAuth, async (req, res) => {
       attributes: { exclude: ["password"] },
     });
 
-    const user = userData.get({ plain: true });
+    const blogData = await BlogPost.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["username"],
+        },
+      ],
+    });
 
+    const user = userData.get({ plain: true });
+    const posts = blogData.map((post) => post.get({ plain: true }));
     res.render("profile", {
       ...user,
       logged_in: true,
+      posts,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -48,6 +58,17 @@ router.get("/login", (req, res) => {
   }
 
   res.render("login");
+});
+
+router.post("/logout", async (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+  res.redirect("/");
 });
 
 module.exports = router;
