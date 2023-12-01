@@ -4,8 +4,6 @@ const createPostHandler = async (event) => {
   const title = document.querySelector("#post-title").value.trim();
   const content = document.querySelector("#post-content").value.trim();
 
-  console.log("In my post handler");
-
   if (title && content) {
     const response = await fetch("/api/blogpost/", {
       method: "POST",
@@ -20,7 +18,6 @@ const createPostHandler = async (event) => {
     }
   }
 };
-
 
 document
   .querySelector(".new-blogpost-form")

@@ -1,29 +1,32 @@
-// const handleBlogpostEdit = async (event) => {
+// const post = document.querySelectorAll(".blog-post");
+// const buttons = document.querySelectorAll("button");
+
+// buttons.forEach((button) => {
+//   button.addEventListener("click", (event) => {
+//     let buttonClicked = event.target;
+//     let postIndex = buttonClicked.parentElement.parentElement.dataset.index;
+
+//     if (buttonClicked.innerText === "Edit") {
+//       let saveBtnEl = document.querySelector(".save-btn");
+//       saveBtnEl.addEventListener("submit", saveHandler(event));
+//     } else if (buttonClicked.innerText === "Delete") {
+//       handleBlogPostDelete(
+//         buttonClicked.parentElement.parentElement.dataset.index
+//       );
+//     }
+//   });
+// });
+
+// const saveHandler = async (event, index) => {
 //   event.preventDefault();
 
-//   const post = document.querySelectorAll(".blog-post");
-
-//   for (let i = 0; i < post.length; i++) {
-//     console.log(post[i].dataset.index);
-//   }
+//   const newTitle = document.querySelector("#title-edit").value.trim();
+//   const newContent = document.querySelector("#content-edit").value.trim();
+//   console.log(index);
+//   console.log(newTitle);
+//   console.log(newContent);
 // };
 
-// document
-//   .querySelector(".blog-post")
-//   .addEventListener("click", handleBlogpostEdit);
-
-const post = document.querySelectorAll(".blog-post");
-const buttons = document.querySelectorAll("button");
-
-buttons.forEach((button) => {
-  button.addEventListener("click", (event) => {
-    let buttonClicked = event.target;
-    console.log(buttonClicked.innerText);
-
-    if (buttonClicked.innerText === "Edit") {
-      console.log();
-    } else if (buttonClicked.innerText === "Delete") {
-      //
-    }
-  });
-});
+// const handleBlogPostDelete = (index) => {
+//   //
+// };
