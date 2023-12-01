@@ -29,15 +29,18 @@
 </div>
 {{#each posts as |post|}}
   <div class="blog-post" data-index="{{post.id}}">
+    <div>
+      <p class="created-by">Created by
+        {{user.username}}
+        on
+        {{post.createdAt}}</p>
+    </div>
     <h2 class="blog-post-title">
       {{post.title}}
     </h2>
     <p>
       <span class="blog-post-content">{{post.content}}</span>
     </p>
-  </div>
-  <div>
-    <p class="created-by">Created by {{user.username}} on {{post.createdAt}}</p>
   </div>
   <div class="form-group">
     <button class="btn btn-primary edit-btn" type="submit">Edit</button>

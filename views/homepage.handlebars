@@ -2,6 +2,9 @@
 
 {{#each posts as |post|}}
 <div class="blog-post">
+      <div>
+    <p class="created-by">Created by {{user.username}} on {{post.createdAt}}</p>
+    </div>
   <h2 class="blog-post-title">
     {{post.title}}
   </h2>
@@ -9,8 +12,5 @@
     <span class="blog-post-content">{{post.content}}</span>
   </p>
 </div>
-    <div>
-    <p class="created-by">Created by {{user.username}} on {{post.createdAt}}</p>
-    </div>
 </br>
 {{/each}}

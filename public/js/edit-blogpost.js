@@ -18,7 +18,7 @@ const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
   button.addEventListener("click", (event) => {
     let buttonClicked = event.target;
-    console.log(event.target.innerText);
+    console.log(buttonClicked.innerText);
 
     if (buttonClicked.innerText === "Edit") {
       console.log();
